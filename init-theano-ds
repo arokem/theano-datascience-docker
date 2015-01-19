@@ -1,0 +1,5 @@
+export DOCKER_HOST=tcp://$(boot2docker ip):2375
+export HACKDAY_DATA_DIR="$(PWD)/data"  # A data folder
+export IPYTHON_PASSWORD=MakeAPassword
+alias theano-ds="docker run -d -p 80:8888 -v $(PWD):/workspace/ -v $(PWD)/data:/workspace/data -e "PASSWORD=$IPYTHON_PASSWORD" arokem/theano-ds ; echo 'Now go to your browser: http://$(boot2docker ip). The password is $IPYTHON_PASSWORD' "
+
